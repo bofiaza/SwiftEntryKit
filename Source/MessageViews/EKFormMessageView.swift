@@ -197,4 +197,12 @@ final public class EKFormMessageView: UIView {
         
         ekTextView?.textView.text = text
     }
+    
+    public func resignFirstResponder(fromTextField accessibilityId: String) {
+        let ekTextField = textFieldViews.first { (object) -> Bool in
+            return object.textField.accessibilityIdentifier == accessibilityId
+        }
+        
+        ekTextField?.textField.resignFirstResponder()
+    }
 }
