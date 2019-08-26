@@ -189,4 +189,12 @@ final public class EKFormMessageView: UIView {
         
         ekTextField?.textField.text = text
     }
+    
+    public func updateText(_ text: String?, forTextView accessibilityId: String) {
+        let ekTextView = textViewViews.first { (object) -> Bool in
+            return object.textView.accessibilityIdentifier == accessibilityId
+        }
+        
+        ekTextView?.textView.text = text
+    }
 }

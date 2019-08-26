@@ -5,9 +5,10 @@
 //  Created by Ninoy on 8/19/19.
 //
 
+import Foundation
 import UIKit
 
-class EKTextView: UIView {
+final public class EKTextView: UIView {
     
     // MARK: - Properties
     
@@ -15,7 +16,7 @@ class EKTextView: UIView {
     
     private let content: EKProperty.TextViewContent
     
-    private let textView = UITextView()
+    private (set) var textView = UITextView()
     private let separatorView = UIView()
     
     public var text: String {
